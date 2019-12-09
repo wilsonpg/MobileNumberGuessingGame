@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
+import { Dialogs } from '@ionic-native/dialogs/ngx';
 
-let number = Math.floor(Math.random() * 10) + 1;
+let number = 1;
+// Math.floor(Math.random() * 10) + 1;
 
 @Component({
   selector: 'app-tab2',
@@ -9,16 +11,21 @@ let number = Math.floor(Math.random() * 10) + 1;
 })
 export class Tab2Page {
 
-  constructor() {
-  }
+  constructor(private dialogs: Dialogs) { }
 
   buttonOne() {
     const clicked = 1;
     if(clicked === number){
-      alert(`you win!`);
+      this.dialogs.confirm('Play Again?', 'You won!', ['Yes', 'No'])
+        .then((buttonIndex) => {
+          if (buttonIndex === 1) {
+            location.reload();
+          }
+        })
+        .catch(e => console.log('Error displaying dialog', e));
     }
     else{
-      alert(`try again`);
+      alert(`Incorrect, try again!`);
     }
   }
 }
