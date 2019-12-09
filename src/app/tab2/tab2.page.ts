@@ -165,4 +165,21 @@ export class Tab2Page {
       guesses += 1;
     }
   }
+
+  buttonTen() {
+    const clicked = 10;
+    if(clicked === number){
+      this.dialogs.confirm('Play Again?', 'You won by selecting' + number + 'after' + guesses + 'guesses!', ['Yes', 'No'])
+        .then((buttonIndex) => {
+          if (buttonIndex === 1) {
+            location.reload();
+          }
+        })
+        .catch(e => console.log('Error displaying dialog', e));
+    }
+    else{
+      this.dialogs.alert(`Incorrect, try again!`);
+      guesses += 1;
+    }
+  }
 }
