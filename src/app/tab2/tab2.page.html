@@ -6,20 +6,22 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content (load) ="getNumber()">
+<ion-content>
   <br><br>
-  <ion-label>
+  <ion-label class="centerLabel">
       &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
       In this game, you will be guessing the value of a randomly selected number (from 1-10).  If correct, you win!  If incorrect, you will be prompted to try again.  Good luck!
   </ion-label>
-  <br><br>
-  <ion-button (click) ="buttonOne()">1</ion-button>
-  <ion-button>2</ion-button>
-  <ion-button>3</ion-button><br>
-  <ion-button>4</ion-button>
-  <ion-button>5</ion-button>
-  <ion-button>6</ion-button><br>
-  <ion-button>7</ion-button>
-  <ion-button>8</ion-button>
-  <ion-button>9</ion-button>
+  <div class="center">
+    <br><br>
+    <ion-button (click) ="buttonOne()">1</ion-button>
+    <ion-button (click) ="buttonTwo()">2</ion-button>
+    <ion-button (click) ="buttonThree()">3</ion-button><br>
+    <ion-button (click) ="buttonFour()">4</ion-button>
+    <ion-button (click) ="buttonFive()">5</ion-button>
+    <ion-button (click) ="buttonSix()">6</ion-button><br>
+    <ion-button (click) ="buttonSeven()">7</ion-button>
+    <ion-button (click) ="buttonEight()">8</ion-button>
+    <ion-button (click) ="buttonNine()">9</ion-button>
+  </div>
 </ion-content>
